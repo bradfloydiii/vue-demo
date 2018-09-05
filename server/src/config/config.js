@@ -14,7 +14,7 @@ module.exports = {
     },
 
     status: (port) => {
-        let msg = `Server started on port ${port}`
+        let msg = `Server running at: http://localhost:${port}`
         return msg
     }
 }

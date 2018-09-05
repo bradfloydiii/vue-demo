@@ -7,6 +7,7 @@ const {sequelize} = require('./models')
 const config = require('./config/config')
 
 const app = express()
+const router = express.Router()
 
 /**************************************************/
 // middleware
@@ -21,7 +22,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 /**************************************************/
 // routing
 /**************************************************/
-require('./routes/routes')(app, sequelize)
+app.use('/', router)
+require('./routes/routes')(router, sequelize)
 
 /**************************************************/
 // connects to the database then starts the server
